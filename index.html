@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SWUTS Checker</title>
+    <link rel="stylesheet" href="./output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+  </head>
+  <body class="bg-gray-100 flex flex-col items-center h-full">
+    <!-- AppBar -->
+    <nav class="w-full bg-blue-400 text-white py-4 px-6 shadow-md">
+      <div class="mx-auto max-w-4xl flex justify-between items-center">
+        <div class="text-lg font-bold">SWUTS Checker</div>
+        <div class="flex">
+          <a href="#" class="px-4 group"
+            >SWUD
+            <div
+              class="bg-blue-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"
+            ></div
+          ></a>
+          <a href="#" class="px-4 group"
+            >SWUTS
+            <div
+              class="bg-blue-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"
+            ></div
+          ></a>
+          <a href="#" class="px-4 group"
+            >Guide
+            <div
+              class="bg-blue-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"
+            ></div
+          ></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Contents -->
+    <div class="w-full max-w-2xl my-8 px-6">
+      <div class="flex justify-between mt-8 mb-4 text-sm">
+        <div>
+          <i class="fa fa-pencil-square-o mr-1" aria-hidden="true"></i
+          ><span>Fill in the Test specification</span>
+        </div>
+        <div class="flex gap-2">
+          <div class="relative group">
+            <button
+              id="runBtn"
+              class="px-2 py-1 bg-blue-400 text-white rounded"
+            >
+              <i class="fa fa-play" aria-hidden="true"></i>
+            </button>
+            <div
+              class="absolute left-1/2 bottom-full mb-2 w-max -translate-x-1/2 scale-0 rounded bg-gray-800 p-2 text-xs text-white transition-all group-hover:scale-100"
+            >
+              Running the checker!
+              <div
+                class="absolute left-1/2 top-full -mt-1 -translate-x-1/2 h-2 w-2 rotate-45 bg-gray-800"
+              ></div>
+            </div>
+          </div>
+          <div class="relative group">
+            <button
+              id="resetBtn"
+              class="px-2 py-1 bg-gray-400 text-white rounded"
+            >
+              <i class="fa fa-refresh" aria-hidden="true"></i>
+            </button>
+            <div
+              class="absolute left-1/2 bottom-full mb-2 w-max -translate-x-1/2 scale-0 rounded bg-gray-800 p-2 text-xs text-white transition-all group-hover:scale-100"
+            >
+              Restore changes to the default template
+              <div
+                class="absolute left-1/2 top-full -mt-1 -translate-x-1/2 h-2 w-2 rotate-45 bg-gray-800"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <textarea id="editor"></textarea>
+      <div
+        id="console"
+        class="mt-5 p-4 bg-black text-green-400 text-sm h-48 overflow-auto whitespace-pre-wrap rounded"
+      ></div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-500 text-white text-center py-16 mt-36 w-full text-sm h-full"
+    >
+      &copy; 2025 Perseus. All rights reserved.
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/yaml/yaml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+    <script type="module" src="scripts/main.js"></script>
+  </body>
+</html>
